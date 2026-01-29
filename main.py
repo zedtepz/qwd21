@@ -35,8 +35,8 @@ twitch_miner = TwitchChannelPointsMiner(
         time_zone="",                           # Set a specific time zone for console and file loggers. Use tz database names. Example: "America/Denver"
         file_level=logging.DEBUG,               # Level of logs - If you think the log file it's too big, use logging.INFO
         emoji=True,                             # On Windows, we have a problem printing emoji. Set to false if you have a problem
-        less=True,                             # If you think that the logs are too verbose, set this to True
-        colored=True,                           # If you want to print colored text
+        less=False,                             # If you think that the logs are too verbose, set this to True
+        colored=False,                           # If you want to print colored text
         color_palette=ColorPalette(             # You can also create a custom palette color (for the common message).
             STREAMER_online="GREEN",            # Don't worry about lower/upper case. The script will parse all the values.
             streamer_offline="red",             # Read more in README.md
@@ -52,7 +52,7 @@ twitch_miner = TwitchChannelPointsMiner(
         discord=Discord(
             webhook_api="https://discord.com/api/webhooks/1341392915339153492/Ro9U7m2JCgzM08T-5qUl9lUcB8VAzHx_ZIvtd0ui500V5HCtvrTJU6G-2dIXAJeusueS",  # Discord Webhook URL
             events=[Events.STREAMER_ONLINE, Events.STREAMER_OFFLINE,
-                    Events.BET_LOSE, Events.CHAT_MENTION],                                  # Only these events will be sent to the chat
+                    Events.BET_LOSE, Events.CHAT_MENTION, Event.BET_GENERAL],                                  # Only these events will be sent to the chat
         ),
         webhook=Webhook(
             endpoint="https://example.com/webhook",                                                                    # Webhook URL
