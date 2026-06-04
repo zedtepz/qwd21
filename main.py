@@ -82,7 +82,7 @@ twitch_miner = TwitchChannelPointsMiner(
         )
     ),
     streamer_settings=StreamerSettings(
-        make_predictions=True,                  # If you want to Bet / Make prediction
+        make_predictions=False,                  # If you want to Bet / Make prediction
         follow_raid=True,                       # Follow raid to obtain more points
         claim_drops=True,                       # We can't filter rewards base on stream. Set to False for skip viewing counter increase and you will never obtain a drop reward from this script. Issue #21
         claim_moments=True,                     # If set to True, https://help.twitch.tv/s/article/moments will be claimed when available
@@ -119,13 +119,13 @@ twitch_miner = TwitchChannelPointsMiner(
 
 twitch_miner.mine(
     [
-    Streamer("ohnepixel", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
-	Streamer("kristoferyee", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
+    Streamer("ohnepixel", settings=StreamerSettings(make_predictions=False  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
+	Streamer("kristoferyee", settings=StreamerSettings(make_predictions=False  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
 	Streamer("bakedjake", settings=StreamerSettings(make_predictions=False  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),    
 	Streamer("j3llybag3l", settings=StreamerSettings(make_predictions=False  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
-	Streamer("summit1g", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),  
+	Streamer("summit1g", settings=StreamerSettings(make_predictions=False  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),  
     Streamer("k4ika", settings=StreamerSettings(make_predictions=False  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
-	Streamer("esfandtv", settings=StreamerSettings(make_predictions=True  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
+	Streamer("esfandtv", settings=StreamerSettings(make_predictions=False  , follow_raid=True , claim_drops=True  , watch_streak=True , community_goals=False , bet=BetSettings(strategy=Strategy.MOST_VOTED      , percentage=5 , stealth_mode=True,  percentage_gap=20 , max_points=300   , filter_condition=FilterCondition(by=OutcomeKeys.TOTAL_USERS,      where=Condition.LTE, value=800 ) ) )),
     ],                                  # Array of streamers (order = priority)
     followers=True,                    # Automatic download the list of your followers
     followers_order=FollowersOrder.ASC  # Sort the followers list by follow date. ASC or DESC
